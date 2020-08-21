@@ -119,6 +119,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "angular-spotify-clone"
+    }
+  },
+  "defaultProject": "angular-spotify-clone",
+  "cli": {
+    "analytics": "8b28f69b-65cb-416e-9f56-8456216e6318"
+  }
 }

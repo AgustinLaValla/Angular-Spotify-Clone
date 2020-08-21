@@ -1,0 +1,7 @@
+<div class="sidebarOption">
+    <i *ngIf="icon" class="material-icons sidebarOption__icon">{{icon}}</i>
+    <h4 *ngIf="icon; else playlistname" (click)="renderTo()">{{title}}</h4>
+    <ng-template #playlistname>
+        <p (click)="getPlaylist()">{{title}}</p>
+    </ng-template>
+</div>

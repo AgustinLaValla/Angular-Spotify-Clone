@@ -1,0 +1,29 @@
+<div *ngIf="playlist" class="playlist">
+    <div class="playlist__info">
+        <img src={{playlist.images[0].url}} alt="" />
+        <div class="playlist__infoText">
+            <strong>PLAYLIST</strong>
+            <h2>{{playlist.name}}</h2>
+            <p>{{playlist.description}}</p>
+        </div>
+    </div>
+
+    <div class="playlist__songs">
+        <div class="playlist__icons">
+            <i (click)="handleShuffleButtonClick()" class="material-icons playlist__shuffle">play_circle_filled</i>
+            <i 
+                (click)="handleFollowingButtonClick()"
+                class="material-icons" 
+                [ngClass]="{'playlist__followingIcon': isFollowingPlaylist, 
+                            'playlist__noFollowingIcon' : !isFollowingPlaylist
+                            }"
+                
+                >{{ isFollowingPlaylist ? 'favorite' : 'favorite_border' }}</i>
+
+        </div>
+
+        <app-song-row *ngFor="let item of playlist.tracks.items" [track]="item.track"></app-song-row>
+
+    </div>
+
+</div>

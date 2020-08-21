@@ -1,0 +1,27 @@
+<div class="footer">
+    <div class="footer__left">
+        <img *ngIf="currentTrack" [src]="this.currentTrack.track_window.current_track.album.images[0].url"
+            class="footer__albumLogo">
+        <div *ngIf="currentTrack" class="footer__songInfo">
+            <h4>{{getArtistsNames()}}</h4>
+            <p>{{getTrackName()}}</p>
+        </div>
+    </div>
+
+    <div class="footer__center">
+        <i class="material-icons footer__green">shuffle</i>
+        <i (click)="player.previousTrack()" class="material-icons footer__icon">skip_previous</i>
+        <i (click)="player.togglePlay()" class="material-icons footer_playPauseIcon footer__icon">
+            {{currentTrack?.paused ? 'play_circle_outline' : 'pause'}}
+        </i>
+        <i (click)="player.nextTrack()" class="material-icons footer__icon">skip_next</i>
+        <i class="material-icons footer__icon footer__green">repeat</i>
+    </div>
+
+    <div class="footer__right">
+        <i class="material-icons" style="margin: 0px 30px; cursor:pointer">playlist_play</i>
+        <mwc-slider (change)="setVolume($event.target.value)" value="100" min="0" max="100"></mwc-slider>
+        <i class="material-icons" style="margin: 0px 30px; cursor:pointer">volume_down</i>
+    </div>
+
+</div>

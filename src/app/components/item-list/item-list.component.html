@@ -1,0 +1,24 @@
+<div *ngIf="itemList" class="search__results">
+    <div class="search__text">
+        <h4>{{title}}</h4>
+        <h5 (click)="viewAll()" *ngIf="spotifyService.screenService.currentScreen.getValue() != 'ViewAll'">
+            VIEW ALL
+        </h5>
+    </div>
+    <div class="search__resultsLists">
+        <div *ngFor="let item of itemList; let i = index" 
+            class="search__resultCard"
+            (mouseover)="onCardMouseOverHandler(item.id + i)" 
+            (mouseleave)="onCardMouseLeaveHandler(item.id + i)"
+            (click)="renderToItemDetails(item)"
+        >
+            <img src={{getImage(item)}} [alt]="item.name">
+            <h1>
+                {{item.name | slice:0:20}}
+                <span *ngIf="item.name.length > 20">...</span>
+            </h1>
+            <p>{{ item.type | titlecase }}</p>
+            <i (click)="playIconClickHandler(item)" [id]="item.id + i" class="material-icons search__cardPlayIcon">play_circle_filled</i>
+        </div>
+    </div>
+</div>

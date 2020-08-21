@@ -1,0 +1,13 @@
+<div (click)="playTrack()" 
+    [class]="getRowClass()"
+>
+    <img
+        src={{getImage()}}
+        alt=""
+        class="songRow__album"
+    />
+    <div class="songRow__info">
+        <h1>{{track.name}}</h1>
+        <p>{{getArtistsNames()}}</p>
+    </div>
+</div>

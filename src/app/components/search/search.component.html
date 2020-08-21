@@ -1,0 +1,33 @@
+<div class="search">
+    <div class="search__resultContainer">
+        <app-item-list
+            [title]="'Artists'" 
+            [itemList]="artistsListobs$ | async"
+            [itemType]="'Artist'"
+        >
+        </app-item-list>
+
+        <app-item-list 
+            [title]="'Albums'" 
+            [itemList]="albumsListobs$ | async"
+            [itemType]="'Albums'"
+        >
+        </app-item-list>
+
+        <app-item-list
+            [title]="'Playlists'" 
+            [itemList]="playlistsListobs$ | async"
+            [itemType]="'Playlist'"
+        >
+        </app-item-list>
+
+        <app-item-list
+            [title]="'Tracklist'" 
+            [itemList]="tracksListobs$ | async"
+            [itemType]="'Tracklist'"
+        >
+        </app-item-list>
+
+
+    </div>
+</div>

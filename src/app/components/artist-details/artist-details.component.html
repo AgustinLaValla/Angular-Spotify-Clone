@@ -1,0 +1,32 @@
+<div class="artist" *ngIf="artistDetails">
+    <div class="artist__info">
+        <img [src]="artistDetails.images[0].url" [alt]="artistDetails.name" />
+        <div class="artist__infoText">
+            <strong>{{artistDetails.type | titlecase}}</strong>
+            <h2>{{artistDetails.name}}</h2>
+            <p>Followers: {{artistDetails.followers.total}}</p>
+        </div>
+    </div>
+
+    <div class="artist__follow">
+        <i class="material-icons artist__playIcon">play_circle_filled</i>
+        <button (click)="followingButtonClickHandler()" class="artist__followBtn">{{following ? 'Following' : 'Follow'}}</button>
+    </div>
+
+    <div class="artist__songs" *ngIf="artistTopTracks">
+        <h2>Popular</h2>
+        <app-song-row *ngFor="let track of artistTopTracks | slice:0:5" [track]="track"></app-song-row>
+    </div>
+
+    <div class="artist__albumsContainer" *ngIf="artistAlbums">
+        <h2>Albums</h2>
+        <div class="artist__albumList">
+            <div class="artist__album" *ngFor="let album of artistAlbums | slice:0:6" (mouseover)="onAlbumOver(album)"
+                (mouseleave)="onAlbumLeave(album)" (click)="getAlbum(album.id)">
+                <i class="material-icons artist__albumPlayIcon" [id]="album.id">play_circle_filled</i>
+                <img [src]="album.images[0].url" [alt]="album.name" class="artist__albumsPicture">
+            </div>
+        </div>
+    </div>
+
+</div>

@@ -1,0 +1,14 @@
+<div class="sidebar">
+    <img class="sidebar__logo" src="https://getheavy.com/wp-content/uploads/2019/12/spotify2019-830x350.jpg"
+        alt="spotify" />
+    <app-sidebar-option [title]="'Home'" [icon]="'home'" [pageName]="'Home'"></app-sidebar-option>
+    <app-sidebar-option [title]="'Search'" [icon]="'search'" [pageName]="'Search'"></app-sidebar-option>
+    <app-sidebar-option [title]="'Your library'" [icon]="'library_music'" [pageName]="'Playlist'"></app-sidebar-option>
+    <br>
+    <strong class="sidebar__title">PLAYLIST</strong>
+    <hr>
+    <div *ngIf="playlists">
+        <app-sidebar-option *ngFor="let playlist of playlists.items" [title]="playlist.name" [playlistId]="playlist.id">
+        </app-sidebar-option>
+    </div>
+</div>

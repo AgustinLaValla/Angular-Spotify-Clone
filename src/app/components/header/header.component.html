@@ -1,0 +1,12 @@
+<div class="header">
+    <div class="header__left">
+        <i class="material-icons">search</i>
+        <input type="text" name="query" placeholder="Search for Artists, Songs, or Albums" [(ngModel)]="query"
+            (ngModelChange)="search()" />
+    </div>
+    <div class="header__right">
+
+        <img src={{spotifyService.user?.images[0]?.url}} alt={{spotifyService.user?.display_name}}>
+        <h4>{{spotifyService.user?.display_name}}</h4>
+    </div>
+</div>

@@ -1,0 +1,25 @@
+<div class="home">
+    <div class="home__itemsContainer">
+        <app-item-list 
+            *ngIf="recentlyPlayedTracks$ | async" 
+            [itemList]="recentlyPlayedTracks$ | async"
+            [title]="'Recently Played'" 
+            [itemType]="'RecentlyPlayed'"
+            >    
+        </app-item-list>
+        <app-item-list 
+            *ngIf="featuredPlaylists$ | async" 
+            [itemList]="featuredPlaylists$ | async"
+            [title]="'Featured Playlists'" 
+            [itemType]="'Playlist'"
+            >    
+        </app-item-list>
+        <app-item-list 
+            *ngIf="newRealeases$ | async" 
+            [itemList]="newRealeases$ | async"
+            [title]="'New Realeases'" 
+            [itemType]="'Albums'"
+            >    
+        </app-item-list>
+    </div>
+</div>

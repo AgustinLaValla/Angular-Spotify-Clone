@@ -1,1 +1,538 @@
-/* You can add global styles to this file, and also import other style files */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif
+}
+
+body::-webkit-scrollbar {
+  display: none;
+}
+
+/* -------------------------------------- LOGIN -------------------------------------- */
+.login {
+  display: grid;
+  place-items: center;
+  min-height: 100vh;
+  background-color: black;
+  padding-bottom: 50px;
+}
+
+.login > img {
+  width: 100%;
+}
+
+.login > a {
+  padding: 20px;
+  border-radius: 99px;
+  background-color: #1db954;
+  font-weight: 800;
+  color: white;
+  text-decoration: none;
+}
+
+/* -------------------------------------- DASHBOARD ------------------------------------ */
+
+.dashboard__body {
+  display: flex;
+}
+.dashboard_main_container {
+  flex: 0.8 1 90%;
+  height: 100vh;
+  background: linear-gradient(rgb(91, 87, 115), rgba(0, 0, 0, 1));
+  color: white;
+  padding: 20px 20px 70px 20px;
+  overflow-y: overlay;
+}
+
+.dashboard_main_container::-webkit-scrollbar {
+  display: none;
+}
+
+/* -------------------------------------- SIDEBAR ------------------------------------- */
+.sidebar {
+  border: 1px solid black;
+  height: 100vh;
+  flex: 0.2;
+  background-color: #040404;
+  min-width: 230px;
+  padding: 0px 10px;
+  color: white;
+}
+
+.sidebar__logo {
+  height: 70px;
+  padding: 10px;
+  margin-right: auto;
+}
+
+.sidebarOption {
+  display: flex;
+  align-items: center;
+  color: grey;
+  height: 40px;
+  cursor: pointer;
+  transition: 0.2s color ease-in;
+}
+
+.sidebarOption:hover {
+  color: white;
+}
+
+.sidebarOption__icon {
+  margin: 0px 10px;
+}
+
+.sidebar__title {
+  margin-left: 10px;
+  padding: 5px;
+  font-size: 12px;
+}
+
+.sidebar > hr {
+  border: 1px solid #282828;
+  width: 90%;
+  margin: 10px auto;
+}
+
+.sidebarOption > p {
+  margin: 10px 0px 0px 20px;
+  font-size: 14px;
+}
+
+/* -------------------------------------- HEADER --------------------------------------- */
+.header {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+
+.header__left {
+  flex: 0.5;
+  display: flex;
+  background-color: white;
+  padding: 10px;
+  border-radius: 30px;
+  min-width: 100px;
+  color: grey;
+  align-items: center;
+}
+
+.header__left > input {
+  border: none;
+  width: 100%;
+  height: 100%;
+}
+
+.header__right {
+  display: flex;
+  align-items: center;
+}
+
+.header__right img {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+}
+.header__right h4 {
+  margin-left: 10px;
+}
+
+/* ----------------------------------- PLAYLIST && HOME && ALBUM && ARTIST -------------------------------- */
+
+.playlist__info,
+.artist__info,
+.album__info {
+  display: flex;
+  align-items: flex-end;
+  padding: 10px;
+}
+
+.playlist__info > img,
+.artist__info > img,
+.album__info > img {
+  height: 30vh;
+  margin: 0 20px;
+  box-shadow: 0 4px 60px rgba(0, 0, 0, 0.5);
+}
+
+.playlist__infoText,
+.artist__infoText,
+.album__infoText {
+  flex: 1;
+}
+
+.playlist__infoText > p,
+.artist__infoText > p,
+.album__info > p {
+  font-size: 14px;
+}
+
+.playlist__songs,
+.artist__songs,
+.artist__albumsContainer {
+  margin: 20px;
+}
+
+.playlist__icons {
+  display: flex;
+  align-items: center;
+}
+
+.playlist__icons > i {
+  margin-right: 20px;
+  font-size: 40px;
+}
+.playlist__shuffle {
+  font-size: 80px !important;
+  margin: 20px 50px 20px 0px;
+  color: #1db954;
+  cursor: pointer;
+}
+
+.playlist__noFollowingIcon {
+  color: #bbb;
+  cursor: pointer;
+  font-size: 40px !important;
+}
+
+.playlist__noFollowingIcon:hover {
+  color: #fff;
+}
+
+.playlist__followingIcon {
+  color: #1db954;
+  cursor: pointer;
+  font-size: 40px !important;
+}
+
+.playlist__shuffle:hover {
+  transition: 100ms transform ease-in;
+  transform: scale(1.08);
+}
+
+.songRowIsBeingPlayed {
+  margin-left: 20px;
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  z-index: 100;
+  color: white;
+  transition: 0.2s ease-in;
+  background-color: black;
+  cursor: pointer;
+}
+.songRowIsNotBeingPlayed {
+  margin-left: 20px;
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  z-index: 100;
+  color: white;
+  transition: 0.2s ease-in;
+  background-color: transparent;
+}
+
+.songRowIsNotBeingPlayed:hover {
+  cursor: pointer;
+  background-color: black;
+  opacity: 0.8;
+}
+.songRow__info {
+  margin-left: 20px;
+}
+
+.songRow__info > h1 {
+  font-size: 16px;
+  margin-top: 3px;
+  color: gray;
+}
+
+.songRow__album {
+  height: 40px;
+  width: 40px;
+}
+
+
+/* -------------------------------------- SEARCH ---------------------------------------- */
+.search__result-container,
+.home__itemsContainer {
+  flex-direction: column;
+  margin-top: 30px;
+}
+
+
+.search__results {
+  display: flex;
+  flex-direction: column;
+}
+
+.search__text {
+  display: flex;
+  justify-content: space-between;
+  margin: 20px 0px;
+}
+
+.search__text  h4 {
+  font-size: 22px;
+}
+
+.search__text > h5 {
+  font-size: 18px;
+  color: #c9c9c9;
+  margin-right: 20px;
+  cursor:pointer;
+}
+
+.search__resultsLists {
+  display: grid;
+  grid-template-columns: 16% 16% 16% 16% 16% 16%;
+  grid-column-gap: 10px;
+}
+
+.search__resultCard {
+  background-color: #303030;
+  margin-bottom: 10px;
+  padding: 15px;
+  min-height: 250px;
+  max-height: 350px;
+  border-radius: 10px;
+  cursor: pointer;
+  position: relative;
+  z-index: 0;
+}
+
+.search__resultCard > img {
+  display: block;
+  margin: 0px auto;
+  width: 100%;
+  max-height: 150px;
+  object-fit: cover;
+  border-radius: 50%;
+  padding-bottom: 10px;
+  box-sizing: border-box;
+}
+
+.search__resultCard h1 {
+  font-size: 16px;
+  font-weight: bold;
+  color: white;
+  transform: translateY(10px);
+}
+
+.search__resultCard p {
+  font-size: 12px;
+  color: lightgrey;
+  transform: translateY(20px);
+}
+
+.search__cardPlayIcon {
+  position: absolute;
+  bottom: 15px;
+  right: 15px;
+  color: #1db954;
+  font-size: 45px !important;
+  z-index: 4500;
+  transition: transform 0.3s ease-in;
+  display: none !important;
+}
+
+.search__cardPlayIcon:hover,
+.artist__playIcon:hover {
+  transform: scale(1.2);
+}
+
+.icon-display-inline {
+  display: inline-block !important;
+}
+
+/* -------------------------------------- ARTISTS ------------------------------------- */
+
+.artist__follow {
+  padding: 25px 0px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.artist__playIcon {
+  color: #1db954;
+  font-size: 60px !important;
+  transition: transform 0.3s ease-in;
+  margin: 0px 20px;
+  cursor: pointer;
+}
+
+.artist__followBtn {
+  padding: 10px 20px;
+  background-color: transparent;
+  border: 1px solid white;
+  border-radius: 5px;
+  cursor: pointer;
+  color:white;
+  font-size: 18px;
+}
+
+.artist__songs h2 {
+  color: white;
+  /* font-size: 18px; */
+  padding-left: 10px;
+  margin-bottom: 15px;
+}
+
+.artist__albumsContainer > h2 {
+  color: white;
+  /* font-size: 18px; */
+  padding-left: 10px;
+  margin-bottom: 15px;
+}
+
+.artist__albumList {
+  display: grid;
+  grid-template-columns: 16% 16% 16% 16% 16% 16%;
+  grid-column-gap: 10px;
+}
+
+.artist__album {
+  width: 100%;
+  position: relative;
+}
+
+.artist__albumsPicture:hover {
+  mix-blend-mode: lighten;
+  opacity: 0.5;
+}
+
+.artist__albumPlayIcon {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 60px !important;
+  opacity: 0;
+}
+
+.artist__albumsPicture {
+  width: 100%;
+  cursor: pointer;
+}
+
+@media screen and (min-width: 960px) and (max-width: 1279px) {
+  .artist__albumList,
+  .search__resultsLists {
+    grid-template-columns: 24% 24% 24% 24%;
+    grid-column-gap: 20px;
+    grid-row-gap: 20px;
+  }
+}
+
+@media screen and (min-width: 750px) and (max-width: 959px) {
+  .artist__albumList,
+  .search__resultsLists {
+    grid-template-columns: 33% 33% 33%;
+    grid-column-gap: 20px;
+    grid-row-gap: 20px;
+  }
+}
+
+@media screen and (min-width: 600px) and (max-width: 749px) {
+  .search__resultsLists {
+    grid-template-columns: 49% 49%;
+    grid-column-gap: 20px;
+    grid-row-gap: 20px;
+  }
+}
+
+@media screen and (max-width: 599px) {
+  .artist__albumList {
+    grid-template-columns: 49% 49%;
+    grid-column-gap: 20px;
+    grid-row-gap: 20px;
+  }
+  .search__resultsLists {
+    grid-template-columns: 98%;
+    justify-content: center;
+    align-items: center;
+  }
+  .search__resultCard {
+    padding: 15px 40px;
+  }
+}
+
+/* --------------------------------------- FOOTER --------------------------------------- */
+.footer {
+  position: fixed;
+  display: flex;
+  justify-content: space-between;
+  bottom: 0;
+  height: 65px;
+  width: 97%;
+  background-color: #282828;
+  padding: 20px;
+  width: 100%;
+  z-index: 5000;
+}
+
+.footer__left {
+  flex: 0.4;
+  display: flex;
+  align-items: center;
+  color: white;
+  max-width: 300px;
+}
+
+.footer__center {
+  flex: 0.4;
+  padding: 0 10px;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 300px;
+}
+
+.footer__center > * {
+  cursor: pointer;
+}
+
+.footer_playPauseIcon {
+  font-size: 40px !important;
+}
+
+.footer__right {
+  flex: 0.2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+}
+
+.footer__albumLogo {
+  height: 60px;
+  width: 60px;
+  margin-right: 20px;
+  object-fit: contain;
+}
+
+.footer__green {
+  color: #1ed15e;
+}
+
+.footer__songInfo > h4 {
+  margin-bottom: 5px;
+}
+
+.footer__songInfo > h4, .footer__songInfo > p {
+  font-size:14px;
+}
+
+.footer__icon:hover,
+.footer__green:hover {
+  transition: transform 0.2s ease-in;
+  transform: scale(1.2) !important;
+}
+
+mwc-slider {
+  --mdc-theme-secondary: green;
+  --mdc-theme-text-primary-on-dark: black;
+}

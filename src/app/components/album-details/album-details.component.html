@@ -1,0 +1,25 @@
+<div class="album" *ngIf="albumDetails">
+    <div class="album__info">
+        <img src={{albumDetails.images[0].url}} alt={{albumDetails.name}} />
+        <div class="album__infoText">
+            <strong>{{albumDetails.type | titlecase}}</strong>
+            <h2>{{albumDetails.name}}</h2>
+
+            <strong>{{getAlbumArtistsNames()}} </strong>
+            <span>{{albumDetails.release_date | slice:0:4}} </span>
+            <span>{{getAlbumDuration()}}</span>
+        </div>
+    </div>
+    <div class="playlist__songs">
+        <div class="playlist__icons">
+            <i class="material-icons playlist__shuffle">play_circle_filled</i>
+            <i class="material-icons playlist__followingIcon">favorite</i>
+        </div>
+        <app-song-row 
+            *ngFor="let item of albumDetails.tracks.items" 
+            [track]="item" 
+            [albumImage]="albumDetails.images[0].url"
+            [albumName]="albumDetails.name">
+        </app-song-row>
+    </div>
+</div>

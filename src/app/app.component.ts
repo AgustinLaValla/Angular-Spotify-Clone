@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { SpotifyService } from './services/spotify-service';
 
 @Component({
   selector: 'app-root',
@@ -6,5 +7,7 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'angular-spotify-clone';
+  constructor(public spotifyService: SpotifyService) {
+    this.spotifyService.getTokenFromUrl();
+  }
 }

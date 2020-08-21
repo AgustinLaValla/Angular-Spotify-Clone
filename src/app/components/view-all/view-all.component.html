@@ -1,0 +1,7 @@
+<app-item-list 
+    *ngIf="viewAllItemsList && viewAllItemsList.length > 0"
+    [title]="spotifyService.screenService.viewAllTitle" 
+    [itemList]="viewAllItemsList"
+    [itemType]="spotifyService.viewAllType"
+>
+</app-item-list>
